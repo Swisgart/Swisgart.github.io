@@ -138,6 +138,15 @@ select {
   font-family: "Tilt Prism", cursive;
 }
 
+.city {
+  margin-bottom: 20px;
+}
+
+.temperature {
+  text-align: center;
+  font-size: 32px;
+}
+
 @media (max-width: 500px) {
   .container {
     display: -webkit-box;
