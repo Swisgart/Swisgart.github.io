@@ -101,6 +101,7 @@ select {
   top: 80px;
   left: 75px;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1));
+  border: 2px solid rgba(172, 255, 47, 0.419);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   -webkit-box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
