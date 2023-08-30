@@ -31,6 +31,26 @@ function getSeason (mounth) {
 
 getSeason(currentMounth)
 
+navigator.geolocation.getCurrentPosition(function(position) {
+  const { latitude, longitude } = position.coords
+  renderCardLocation(latitude, longitude)
+})
+
+function renderCardLocation (lat, lon) {
+  lat = lat.toFixed(2)
+  lon = lon.toFixed(2)
+
+  let link = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=3b48499f6bce2380ba62fff6014c547c&units=metric`
+  fetch(link).then((resp) => resp.json())
+  .then(function (data) {
+    console.log(data);
+    let temterature = Math.round(data.main.temp)
+    document.querySelector('.city').textContent = data.name
+    document.querySelector('.temperature').textContent = `${temterature}°C`
+  })
+
+}
+
 
 
 input.addEventListener('keydown', function (key) {
