@@ -8,10 +8,6 @@ let currentMounth = DATE.toLocaleString('en', { month: 'long' }).toLowerCase()
 let season = ''
 
 
-// const temperature = document.querySelector('.temperature')
-
-
-
 function getSeason (mounth) {
   
   if(mounth === 'december' || mounth === 'january' || mounth === 'february') {
@@ -94,18 +90,10 @@ input.addEventListener('keydown', function (key) {
           console.log(url);
         }
 
-        
-
       })
       
       input.value = ''
-  
-
-
   }
-
-
-
 })
 
 function getTime() {
@@ -114,27 +102,6 @@ function getTime() {
     dateToday.textContent = new Date().toLocaleDateString()
   }, 1000)
 }
-
-
 getTime()
 
-let currentPosition = {}
-
-function getLocation() {
-  navigator.geolocation.getCurrentPosition(function (data) {
-    console.log(data.coords.longitude);
-    console.log(data.coords.latitude);
-    return currentPosition = {
-      lon: data.coords.longitude,
-      lat: data.coords.latitude
-    }
-  })
-}
-
-getLocation()
-
-
-
-
-console.log(currentPosition);
 
