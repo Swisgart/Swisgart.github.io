@@ -43,6 +43,7 @@ function renderCardLocation (lat, lon) {
     let temterature = Math.round(data.main.temp)
     document.querySelector('.city').textContent = data.name
     document.querySelector('.temperature').textContent = `${temterature}°C`
+    document.querySelector('.rain').textContent = data.weather[0].main
   })
 
 }
@@ -87,7 +88,45 @@ input.addEventListener('keydown', function (key) {
             container.style.backgroundImage = 'url(./images/summer/clear.jpg)'
           }
 
-          console.log(url);
+        } else if(season === 'autumn') {
+          if (isItRain === 'Rain') {
+            container.style.backgroundImage = 'url(./images/autumn/rain.jpg)'
+            document.querySelector('.rain').textContent = `Дождь`
+            
+          } else if (isItRain === 'Clouds') {
+            container.style.backgroundImage = 'url(./images/autumn/clouds.jpg)'
+            document.querySelector('.rain').textContent = `Облачно`
+          } else if (isItRain === 'Clear') {
+            document.querySelector('.rain').textContent = `Ясно`
+            container.style.backgroundImage = 'url(./images/autumn/clear.jpg)'
+          }
+
+        } else if(season === 'winter') {
+          if (isItRain === 'Rain') {
+            container.style.backgroundImage = 'url(./images/winter/rain.jpg)'
+            document.querySelector('.rain').textContent = `Дождь`
+            
+          } else if (isItRain === 'Clouds') {
+            container.style.backgroundImage = 'url(./images/winter/clouds.jpg)'
+            document.querySelector('.rain').textContent = `Облачно`
+          } else if (isItRain === 'Clear') {
+            document.querySelector('.rain').textContent = `Ясно`
+            container.style.backgroundImage = 'url(./images/winter/clear.jpg)'
+          }
+
+        } else if(season === 'spring') {
+          if (isItRain === 'Rain') {
+            container.style.backgroundImage = 'url(./images/spring/rain.jpg)'
+            document.querySelector('.rain').textContent = `Дождь`
+            
+          } else if (isItRain === 'Clouds') {
+            container.style.backgroundImage = 'url(./images/spring/clouds.jpg)'
+            document.querySelector('.rain').textContent = `Облачно`
+          } else if (isItRain === 'Clear') {
+            document.querySelector('.rain').textContent = `Ясно`
+            container.style.backgroundImage = 'url(./images/spring/clear.jpg)'
+          }
+
         }
 
       })
