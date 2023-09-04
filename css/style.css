@@ -170,7 +170,7 @@ select {
         -ms-flex-align: center;
             align-items: center;
     padding-top: 80px;
-    background-position: -870px;
+    background-position: right top;
     background-size: cover;
   }
   .input-wrapper,
